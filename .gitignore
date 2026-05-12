@@ -4,3 +4,4 @@ instance/
 *.db
 .env
 *.pyc
+gunicorn==21.2.0
