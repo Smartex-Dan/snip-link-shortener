@@ -313,3 +313,15 @@ body {
 .del-btn {
   font-family: 'Space Mono', monospace;
 }
+
+.input-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (min-width: 480px) {
+  .input-row {
+    flex-direction: row;
+  }
+}
