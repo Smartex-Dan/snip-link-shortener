@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snip — Link Shortener</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="logo">snip<span>.</span></div>
+    <div class="logo-sub">url shortener</div>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <h1>Short links,<br/><em>big impact.</em></h1>
+    <p>// paste long · get short · track clicks</p>
+  </div>
+
+  <div class="card">
+    <div class="input-row">
+      <input
+        class="url-input"
+        id="urlInput"
+        type="text"
+        placeholder="https://your-very-long-url.com/goes/here"
+        autocomplete="off"
+      />
+      <button class="btn" id="shortenBtn" onclick="shortenUrl()">Snip it</button>
+    </div>
+    <p class="error-msg" id="errorMsg"></p>
+    <div class="result-box" id="resultBox">
+      <a class="result-link" id="resultLink" href="#" target="_blank"></a>
+      <button class="copy-btn" id="copyBtn" onclick="copyLink()">copy</button>
+    </div>
+  </div>
+
+  <div class="table-section">
+    <p class="section-label">Recent links</p>
+    <table class="links-table">
+      <thead>
+        <tr>
+          <th>Original</th>
+          <th>Short</th>
+          <th>Clicks</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="linksBody">
+        <tr class="empty-row"><td colspan="4">No links yet. Snip one above!</td></tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<script>
+  const BASE = "{{ base_url }}";
+</script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
