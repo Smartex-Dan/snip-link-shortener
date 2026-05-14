@@ -217,6 +217,8 @@ main {
     border-radius: var(--radius);
     overflow: hidden;
     border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
 }
 
 .links-table th {
@@ -237,6 +239,10 @@ main {
     color: var(--text);
     border-bottom: 1px solid #1e1e28;
     vertical-align: middle;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 0;
 }
 
 .links-table tr:last-child td { border-bottom: none; }
